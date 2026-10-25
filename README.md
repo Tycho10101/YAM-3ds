@@ -33,7 +33,9 @@ YAM 3DS stands for Yet Another Minecraft for the 3DS; A 2D Minecraft clone for t
 	- [ ] Streaming world data
 	- [ ] Seeing other players
  - [ ] Supported Devices
-	 - [x] PC
+	 - [x] Windows
+	 - [x] Linux
+	 - [x] MacOS (Unsure how LÖVE works on MacOS, but should work)
 	 - [x] 3DS
 	 - [ ] Android (Untested til later date)
 	 - [ ] ~~Wii U~~ (Not planned til later date)
