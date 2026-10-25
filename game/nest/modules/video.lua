@@ -39,6 +39,8 @@ function video.init(console, extra)
         table.insert(video._framebuffers,
             framebuffer("right", { scale = scale, size = info.right }))
         table.insert(video._framebuffers,
+            framebuffer("top", { scale = scale, size = info.top }))
+        table.insert(video._framebuffers,
             framebuffer("bottom", { scale = scale, size = info.bottom, offset = { 40 * scale, 240 * scale } }))
     elseif console == "switch" then
         local mode = (extra.docked and "docked" or "undocked")

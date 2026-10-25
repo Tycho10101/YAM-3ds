@@ -39,6 +39,10 @@ end
 function framebuffer:renderTo(render_func)
     if self.name == "right" and not love.graphics.get3D() then
         return
+    elseif self.name == "left" and not love.graphics.get3D() then
+        return
+    elseif self.name == "top" and love.graphics.get3D() then
+        return
     end
 
     if not self.shouldRenderTo then
@@ -54,7 +58,11 @@ end
 
 ---Draws the love.Canvas
 function framebuffer:draw()
-    if (self.name == "right" and not love.graphics.get3D()) then
+    if self.name == "right" and not love.graphics.get3D() then
+        return
+    elseif self.name == "left" and not love.graphics.get3D() then
+        return
+    elseif self.name == "top" and love.graphics.get3D() then
         return
     end
 

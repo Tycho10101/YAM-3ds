@@ -3,6 +3,7 @@ return
     ["3ds"] = {
         left   = { 400, 240 },
         right  = { 400, 240 },
+        top    = { 400, 240 },
         bottom = { 320, 240 }
     },
     ["switch"] = {
