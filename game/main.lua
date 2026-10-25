@@ -2,7 +2,7 @@ json = require "json"
 
 -- Setup nest if not on 3ds
 local osName = love.system.getOS()
-if osName ~= "Horizon" or osName ~= "Cafe" then
+if osName ~= "Horizon" and osName ~= "Cafe" then
 	require("nest").init({console = "3ds", scale = 1})
 end
 
