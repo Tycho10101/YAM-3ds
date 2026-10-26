@@ -40,9 +40,9 @@ function love.draw(screen)
     local width, height = love.graphics.getDimensions(screen)
 	
     if screen == "bottom" or screen == "gamepad" then
-		render_top()
-	else
 		render_bottom()
+	else
+		render_top()
 	end
 
 	love.graphics.print(screen, 0, 0)
