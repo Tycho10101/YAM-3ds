@@ -10,38 +10,44 @@ YAM 3DS stands for Yet Another Minecraft for the 3DS; A 2D Minecraft clone for t
 
 ## Road Map
 
- - [ ] Rendering
-	 - [ ] UI Framework
-		 - [ ] Buttons
-		 - [ ] Custom Images
-		 - [ ] Tool-tips
-		 - [ ] Items
-	 - [ ] Render blocks
-	 - [ ] Render player skin
-	 - [ ] Render Lighting
-	 - [ ] Render entities
- - [ ] World Generation
-	- [ ] Flat world
-	- [ ] Procedural Generation
-	- [ ] Biome
-	- [ ] Caves
-	- [ ] Bedrock
-	- [ ] Trees
- - [ ] Multiplayer
-	- [ ] Server list
-	- [ ] Joining
-	- [ ] Streaming world data
-	- [ ] Seeing other players
- - [ ] Supported Distrobutions
-	 - [x] Universal LOVE file
-	 - [x] Windows EXE for x64
-	 - [x] Linux AppImage for x64
-	 - [ ] MacOS <sup><a href="#loverkey">2</a></sup>
-	 - [ ] 3DS <sup><a href="#loverkey">1</a></sup>
-	 	- [ ] .3dsx
-		- [ ] .cia
-	 - [ ] Android <sup><a href="#loverkey">1</a></sup><sup><a href="#loverkey">3</a></sup>
-	 - [ ] Wii U <sup><a href="#loverkey">2</a></sup><sup><a href="#loverkey">3</a></sup>
+### Key
+
+  - 🟩 Completed
+  - 🟨 Partially completed / In progress
+  - ⬛ Not started
+
+  - 🟨 Rendering
+	 - 🟨 UI Framework
+		 - ⬛ Buttons
+		 - 🟨 Custom Images
+		 - ⬛ Tool-tips
+		 - ⬛ Items
+	 - ⬛ Render blocks
+	 - ⬛ Render player skin
+	 - ⬛ Render Lighting
+	 - ⬛ Render entities
+  - ⬛ World Generation
+	- ⬛ Flat world
+	- ⬛ Procedural Generation
+	- ⬛ Biome
+	- ⬛ Caves
+	- ⬛ Bedrock
+	- ⬛ Trees
+  - ⬛ Multiplayer
+	- ⬛ Server list
+	- ⬛ Joining
+	- ⬛ Streaming world data
+	- ⬛ Seeing other players
+  - 🟨 Supported Distrobutions
+	 - 🟩 Universal LOVE file
+	 - 🟩 Windows EXE for x64
+	 - 🟩 Linux AppImage for x64
+	 - ⬛ MacOS <sup><a href="#loverkey">2</a></sup>
+	 - ⬛ 3DS <sup><a href="#loverkey">1</a></sup>
+	 	- ⬛ .3dsx
+		- ⬛ .cia
+	 - ⬛ Android <sup><a href="#loverkey">1</a></sup><sup><a href="#loverkey">3</a></sup>
+	 - ⬛ Wii U <sup><a href="#loverkey">2</a></sup><sup><a href="#loverkey">3</a></sup>
 
 <a id="loverkey"></a><sup>1</sup>Planned by [lover](https://github.com/Wolfyxon/lover)
 <br><sup>2</sup>Testers needed for [lover](https://github.com/Wolfyxon/lover)
