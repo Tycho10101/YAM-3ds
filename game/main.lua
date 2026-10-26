@@ -1,10 +1,10 @@
-json = require "json"
-
 -- Setup nest if not on 3ds
 local osName = love.system.getOS()
 if osName ~= "Horizon" and osName ~= "Cafe" then
 	require("nest").init({console = "3ds", scale = 1})
 end
+
+json = require "json"
 
 function love.load()
 	if love._console == "3DS" then
@@ -19,6 +19,9 @@ function love.load()
 		end
 		return
 	end
+	
+	mode = "ui"
+	screen = ""
 end
 
 function love.update(dt)
