@@ -1,0 +1,13 @@
+[package]
+name = "YAM 3ds"
+description = "Yet Another Minecraft for the 3DS; A 2D Minecraft clone for the 3DS made in Lua using LÖVE Potion."
+author = "Tycho10101"
+version = "0.1.0"
+icon = "icon.png"
+
+[directories]
+source = "game"
+build = "build"
+
+[build]
+default = ["love", "win64", "linux"]
