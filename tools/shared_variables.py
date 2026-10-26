@@ -6,3 +6,4 @@ class Variables:
         project = Path(__file__).resolve().parent.parent # Gets YAM 3ds project root directory
         game = project / "game"
         build = project / "build"
+        build_temp = build / "temp"
