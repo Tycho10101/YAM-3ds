@@ -43,6 +43,9 @@ luac.out
 *.hex
 *.cia
 
+# Python tools
+__pycache__/
+
 # Love Potion build files
 *.love
 *.3dsx
