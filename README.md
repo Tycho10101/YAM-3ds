@@ -32,11 +32,24 @@ YAM 3DS stands for Yet Another Minecraft for the 3DS; A 2D Minecraft clone for t
 	- [ ] Joining
 	- [ ] Streaming world data
 	- [ ] Seeing other players
- - [ ] Supported Devices
-	 - [x] Windows
-	 - [x] Linux
-	 - [x] MacOS (Unsure how LÖVE works on MacOS, but should work)
-	 - [x] 3DS
-	 - [ ] Android (Untested til later date)
-	 - [ ] ~~Wii U~~ (Not planned til later date)
+ - [ ] Supported Distrobutions
+	 - [x] Universal LOVE file
+	 - [x] Windows EXE for x64
+	 - [x] Linux AppImage for x64
+	 - [ ] MacOS <sup><a href="#loverkey">2</a></sup>
+	 - [ ] 3DS <sup><a href="#loverkey">1</a></sup>
+	 	- [ ] .3dsx
+		- [ ] .cia
+	 - [ ] Android <sup><a href="#loverkey">1</a></sup><sup><a href="#loverkey">3</a></sup>
+	 - [ ] Wii U <sup><a href="#loverkey">2</a></sup><sup><a href="#loverkey">3</a></sup>
 
+<a id="loverkey"></a><sup>1</sup>Planned by [lover](https://github.com/Wolfyxon/lover)
+<br><sup>2</sup>Testers needed for [lover](https://github.com/Wolfyxon/lover)
+<br><sup>3</sup>Not to be developed to a later date
+
+# Credits
+- Mojang - For the original game and assets
+- Nintendo - For the 3ds and Wii U
+- [LÖVE Team](https://love2d.org/) - For their work on LÖVE2D
+- [LÖVEBrew Team](https://lovebrew.org/) - For their work on porting LÖVE2D to the 3ds, Wii U, and Switch
+- [Wolfyxon](https://github.com/Wolfyxon/) - For his work on [lover](https://github.com/Wolfyxon/lover)
