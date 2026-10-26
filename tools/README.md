@@ -2,7 +2,7 @@
 # Tools
 
 These are various tools for development and compilation.
-May eventually be replaced by [Lover](https://github.com/Wolfyxon/lover)
+Will eventually be replaced by [Lover](https://github.com/Wolfyxon/lover)
 
 | Name | Description |
 |--|--|
