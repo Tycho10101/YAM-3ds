@@ -20,19 +20,51 @@ function love.load()
 		return
 	end
 	
+	-- shared ui texture setup
+
+	-- ui setup
 	mode = "ui"
-	screen = ""
+	screen_name = "title"
+	screen_old = ""
+	screen_data = nil
 end
 
 function love.update(dt)
-
+	-- load new screen on change
+	if screen_old ~= screen_name then
+		screen_old = screen_name
+		screen_data, _ = love.filesystem.read("gui/" .. screen_name .. ".json")
+		screen_data = json.decode(screen_data)
+		collectgarbage("collect")
+		for screen, value in pairs(screen_data) do
+			print(screen, value)
+			for	index, widget in ipairs(value) do
+				if widget.type == "image" then
+					widget.image = love.graphics.newImage("textures/" .. widget.src)
+				else
+					error("Unknown widget type: " .. widget.type)
+				end
+			end
+		end
+	end
 end
 
-function render_top()
-
+function render_ui(screen)
+	for	index, widget in ipairs(screen_data[screen]) do
+		if widget.type == "image" then
+			love.graphics.draw(widget.image, 0, 0)
+		else
+			error("No renderer for widget type: " .. widget.type)
+		end
+	end
 end
 
-function render_bottom()
+
+function render_top(screen)
+	render_ui(screen)
+end
+
+function render_bottom(screen)
 
 end
 
@@ -40,9 +72,9 @@ function love.draw(screen)
     local width, height = love.graphics.getDimensions(screen)
 	
     if screen == "bottom" or screen == "gamepad" then
-		render_bottom()
+		render_bottom('bottom')
 	else
-		render_top()
+		render_top('top')
 	end
 
 	love.graphics.print(screen, 0, 0)

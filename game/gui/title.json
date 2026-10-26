@@ -1,0 +1,9 @@
+{
+    "top": [
+        {
+            "type": "image",
+            "src": "ui/title.png"
+        }
+    ],
+    "bottom": []
+}
