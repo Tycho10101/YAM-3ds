@@ -47,3 +47,4 @@ luac.out
 *.love
 *.3dsx
 *.t3x
+build/
