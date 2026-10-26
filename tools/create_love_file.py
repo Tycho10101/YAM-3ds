@@ -1,6 +1,6 @@
 from zipfile import ZipFile, ZIP_DEFLATED
 from pathlib import Path
-from shared_variables import Variables
+from utilities import Variables
 
 def build_love_file():
     output_path = Variables.path.build / f"{Variables.project_name}.love"

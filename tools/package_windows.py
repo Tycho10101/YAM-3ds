@@ -1,6 +1,6 @@
 from create_love_file import build_love_file
 from urllib.request import urlretrieve
-from shared_variables import Variables
+from utilities import Variables
 import shutil
 from zipfile import ZipFile, ZIP_DEFLATED
 

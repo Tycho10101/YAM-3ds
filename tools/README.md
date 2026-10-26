@@ -5,7 +5,7 @@ These are various tools for development and compilation.
 
 | Name | Description |
 |--|--|
-| shared_variables.py | Shared variables for other scripts, does nothing by itself. |
+| utilities.py | Shared utilities for other scripts, does nothing by itself. |
 | create_love_file.py | Packages the project into a .love for running on PC (Windows, Linux, and Mac) |
 | package_windows.py | Packages the project into a .exe for running on Windows |
 | package_linux.py | Packages the project into an executable for running on Linux |
