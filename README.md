@@ -38,6 +38,8 @@ YAM 3DS stands for Yet Another Minecraft for the 3DS; A 2D Minecraft clone for t
 	- ⬛ Joining
 	- ⬛ Streaming world data
 	- ⬛ Seeing other players
+	- ⬛ Player Skins
+		- ⬛ Universal File Format
   - 🟨 Supported Distrobutions
 	 - 🟩 Universal LOVE file
 	 - 🟩 Windows EXE for x64
