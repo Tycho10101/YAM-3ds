@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  build-game:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -17,6 +17,8 @@ jobs:
         run: |
           sudo curl -L "https://github.com/Wolfyxon/lover/releases/latest/download/lover" -o "/usr/bin/lover"
           sudo chmod +x /usr/bin/lover
+
+          lover install love-win64 love-linux
 
       - name: Build using Lover
         run: |
