@@ -24,6 +24,7 @@ jobs:
           spawn lover install love-win64 love-linux
           expect "Proceed with the installation? [Y/N]:"
           send "y\r"
+          expect eof
           '
 
       - name: Build using Lover
