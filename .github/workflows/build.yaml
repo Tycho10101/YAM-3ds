@@ -18,14 +18,7 @@ jobs:
           sudo curl -L "https://github.com/Wolfyxon/lover/releases/latest/download/lover" -o "/usr/bin/lover"
           sudo chmod +x /usr/bin/lover
 
-          sudo apt-get update && sudo apt-get install -y expect
-
-          expect -c '
-          spawn lover install love-win64 love-linux
-          expect "Proceed with the installation? [Y/N]:"
-          send "y\r"
-          expect eof
-          '
+          echo y | lover install love-win64 love-linux
 
       - name: Build using Lover
         run: |
