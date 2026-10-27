@@ -5,7 +5,6 @@ if osName ~= "Horizon" and osName ~= "Cafe" then
 end
 
 json = require "json"
-ui = require "ui"
 
 function love.load()
 	if love._console == "3DS" then
