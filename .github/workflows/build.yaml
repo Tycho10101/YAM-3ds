@@ -1,0 +1,41 @@
+name: Build Game
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download and Install Lover
+        run: |
+          sudo curl -L "https://github.com/Wolfyxon/lover/releases/latest/download/lover" -o "/usr/bin/lover"
+          chmod +x /usr/bin/lover
+
+      - name: Build using Lover
+        run: |
+          lover build
+
+      - name: Upload Universal Love File
+        uses: actions/upload-artifact@v4
+        with:
+          name: YAM-3ds-love
+          path: build/YAM 3ds.love
+
+      - name: Upload Windows Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: YAM-3ds-win64
+          path: build/win64
+
+      - name: Upload Linux AppImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: YAM-3ds-linux
+          path: build/YAM 3ds.AppImage
