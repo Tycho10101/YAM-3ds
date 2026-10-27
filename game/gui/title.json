@@ -1,9 +1,30 @@
 {
     "top": [
         {
-            "type": "image",
-            "src": "ui/title.png"
+            "alignment": "center",
+            "padding": 0,
+            "elements": [        
+                {
+                    "type": "image",
+                    "src": "ui/title"
+                }
+            ]
         }
     ],
-    "bottom": []
+    "bottom": [
+        {
+            "alignment": "center",
+            "padding": 10,
+            "elements": [        
+                {
+                    "type": "image",
+                    "src": "ui/buttons/button_highlighted"
+                },
+                {
+                    "type": "image",
+                    "src": "ui/buttons/button"
+                }
+            ]
+        }
+    ]
 }
