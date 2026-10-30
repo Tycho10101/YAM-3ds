@@ -48,8 +48,9 @@ YAM 3DS stands for Yet Another Minecraft for the 3DS; A 2D Minecraft clone for t
 	 - ⬛ 3DS <sup><a href="#loverkey">1</a></sup>
 	 	- ⬛ .3dsx
 		- ⬛ .cia
-	 - ⬛ Android <sup><a href="#loverkey">1</a></sup><sup><a href="#loverkey">3</a></sup>
-	 - ⬛ Wii U <sup><a href="#loverkey">2</a></sup><sup><a href="#loverkey">3</a></sup>
+   	 - ⬛ Optional
+	 	- ⬛ Android <sup><a href="#loverkey">1</a></sup><sup><a href="#loverkey">3</a></sup>
+	 	- ⬛ Wii U <sup><a href="#loverkey">2</a></sup><sup><a href="#loverkey">3</a></sup>
 
 <a id="loverkey"></a><sup>1</sup>Planned by [lover](https://github.com/Wolfyxon/lover)
 <br><sup>2</sup>Testers needed for [lover](https://github.com/Wolfyxon/lover)
