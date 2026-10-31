@@ -1,8 +1,11 @@
 -- Setup nest if not on 3ds
 local osName = love.system.getOS()
 if osName ~= "Horizon" and osName ~= "Cafe" then
-	require("nest").init({console = "3ds", scale = 1})
+	require("nest").init({console = "3ds", scale = 2})
 end
+
+local version = os.getenv("LOVER_PKG_VERSION")
+local game_name = os.getenv("LOVER_PKG_NAME")
 
 json = require "json"
 

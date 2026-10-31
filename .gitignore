@@ -46,8 +46,21 @@ luac.out
 # Python tools
 __pycache__/
 
-# Love Potion build files
-*.love
+# Lover build files
 *.3dsx
 *.t3x
 build/
+
+*.luac
+*.exe
+*.so
+*.so.*
+*.dll
+*.zip
+*.love
+*.AppImage
+
+# Other
+*.temp
+*.sig
+*~
