@@ -17,8 +17,8 @@ YAM 3DS stands for Yet Another Minecraft for the 3DS; A 2D Minecraft clone for t
   - ⬛ Not started
   - 🟨 Rendering
 	 - 🟨 UI Framework
-		 - ⬛ Buttons
-		 - 🟨 Custom Images
+		 - 🟨 Buttons
+		 - 🟩 Custom Images
 		 - ⬛ Tool-tips
 		 - ⬛ Items
 	 - ⬛ Render blocks
