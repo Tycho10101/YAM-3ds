@@ -17,12 +17,12 @@
             "padding": 10,
             "elements": [        
                 {
-                    "type": "image",
-                    "src": "ui/buttons/button_highlighted"
+                    "type": "button",
+                    "text": "top"
                 },
                 {
-                    "type": "image",
-                    "src": "ui/buttons/button"
+                    "type": "button",
+                    "text": "bottom"
                 }
             ]
         }

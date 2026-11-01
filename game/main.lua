@@ -1,14 +1,15 @@
 -- Setup nest if not on 3ds
 local osName = love.system.getOS()
 if osName ~= "Horizon" and osName ~= "Cafe" then
-	require("nest").init({console = "3ds", scale = 2})
+	nest_args = {console = "3ds", scale = 1}
+	require("nest").init(nest_args)
 end
 
 local version = os.getenv("LOVER_PKG_VERSION")
 local game_name = os.getenv("LOVER_PKG_NAME")
 
-json = require "json"
-ui = require "ui"
+local json = require "json"
+local ui = require "ui"
 
 function love.load()
 	if love._console == "3DS" then
@@ -67,7 +68,7 @@ function love.draw(screen)
 		render_top('top')
 	end
 
-	ui.render_ui(screen, screen_data)
+	ui.render_ui(screen, screen_data, textures)
 
 	-- Debug options
 	--love.graphics.print(screen, 0, 0) -- Print screen name

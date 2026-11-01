@@ -1,12 +1,13 @@
 ui = {}
 
-function ui.get_screen_size(screen)
-	return (screen == "bottom") and 320 or 400, 240
-end
+local json = require "json"
+local utilities = require "utils"
 
 function ui.load_screen(screen_name)
-	screen_data, _ = love.filesystem.read("gui/" .. screen_name .. ".json")
-	screen_data = json.decode(screen_data)
+	local screen_data, _ = love.filesystem.read("gui/" .. screen_name .. ".json")
+	local screen_data = json.decode(screen_data)
+
+    local screen_code = require("gui/" .. screen_name)
 
 	for screen, value in pairs(screen_data) do
 		for	_, container in ipairs(value) do
@@ -17,6 +18,8 @@ function ui.load_screen(screen_name)
 				if widget.type == "image" then
 					widget.image = love.graphics.newImage("textures/" .. widget.src .. ".png")
 					widget.w, widget.h = widget.image:getDimensions()
+				elseif widget.type == "button" then
+					widget.w, widget.h = 200, 20
 				else
 					error("Unknown widget type: " .. widget.type)
 				end
@@ -30,11 +33,14 @@ function ui.load_screen(screen_name)
 			container.top = (240 - container.h) / 2
 		end
 	end
+
+    screen_data = screen_code.init(screen_data)
 	return screen_data
 end
 
-function ui.render_ui(screen, screen_data)
-	local screen_width, screen_height = ui.get_screen_size(screen)
+function ui.render_ui(screen, screen_data, textures)
+	local screen_width, screen_height = utils.get_screen_size(screen)
+    local px, py = utils.get_touch_position()
 
 	for	_, container in ipairs(screen_data[screen]) do
 		local y_offset = 0
@@ -49,6 +55,13 @@ function ui.render_ui(screen, screen_data)
 
 			if widget.type == "image" then
 				love.graphics.draw(widget.image, x, y)
+			elseif widget.type == "button" then
+                local collide = utils.check_point_collide(px, py, x, y, widget.w, widget.h)
+                if collide then
+                    love.graphics.draw(textures["buttons/button_highlighted"], x, y)
+                else
+				    love.graphics.draw(textures["buttons/button"], x, y)
+                end
 			else
 				error("No renderer for widget: " .. widget.type)
 			end
@@ -62,7 +75,7 @@ function ui.render_ui(screen, screen_data)
 end
 
 function ui.draw_background(screen)
-	local screen_width, screen_height = ui.get_screen_size(screen)
+	local screen_width, screen_height = utils.get_screen_size(screen)
 	
 	for x = 0, screen_width - 16, 16 do
 		for y = 0, 240 - 16, 16 do
