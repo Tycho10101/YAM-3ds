@@ -25,12 +25,14 @@ function framebuffer.new(name, config)
 
     instance.scale = config.scale or 1
     instance.canvas = love.graphics.newCanvas(instance.width, instance.height)
+    instance.canvas:setFilter("nearest", "nearest")
 
     return instance
 end
 
 function framebuffer:refresh(width, height)
     self.canvas = love.graphics.newCanvas(width * self.scale, height * self.scale)
+    self.canvas:setFilter("nearest", "nearest")
     self.width, self.height = width, height
 end
 
