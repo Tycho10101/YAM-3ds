@@ -8,9 +8,10 @@ end
 local version = os.getenv("LOVER_PKG_VERSION")
 
 local ui = require "ui"
-local font = require "font"
+font = require "font"
 
 function love.load()
+	love.graphics.setDefaultFilter("nearest", "nearest")
 	if love._console == "3DS" then
     	love.graphics.set3D(false)
 	else
@@ -53,6 +54,7 @@ end
 
 function render_top(screen)
 	ui.draw_background(screen)
+	font.print("Hello, World!\nThis is a new line!", 0, 0, 1)
 end
 
 function render_bottom(screen)
@@ -62,8 +64,6 @@ function render_bottom(screen)
 end
 
 function love.draw(screen)
-    local width, height = love.graphics.getDimensions(screen)
-	
     if screen == "bottom" then
 		render_bottom('bottom')
 	else

@@ -28,4 +28,21 @@ function utils.get_touch_position()
     return utils.touch.x, utils.touch.y
 end
 
+function utils.get_keys(t)
+    local keys = {}
+    for key, _ in pairs(t) do
+        table.insert(keys, key)
+    end
+    return keys
+end
+
+function utils.contains(t, target)
+    for _, value in ipairs(t) do
+        if value == target then
+            return true
+        end
+    end
+    return false
+end
+
 return utils

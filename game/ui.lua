@@ -7,7 +7,7 @@ function ui.load_screen(screen_name)
 	local screen_data, _ = love.filesystem.read("gui/" .. screen_name .. ".json")
 	local screen_data = json.decode(screen_data)
 
-    local screen_code = require("gui/" .. screen_name)
+    local screen_code = require("gui." .. screen_name)
 
 	for screen, value in pairs(screen_data) do
 		for	_, container in ipairs(value) do
