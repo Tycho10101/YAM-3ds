@@ -1,15 +1,14 @@
 -- Setup nest if not on 3ds
 local osName = love.system.getOS()
 if osName ~= "Horizon" and osName ~= "Cafe" then
-	nest_args = {console = "3ds", scale = 1}
+	nest_args = {console = "3ds", scale = 2}
 	require("nest").init(nest_args)
 end
 
 local version = os.getenv("LOVER_PKG_VERSION")
-local game_name = os.getenv("LOVER_PKG_NAME")
 
-local json = require "json"
 local ui = require "ui"
+local font = require "font"
 
 function love.load()
 	if love._console == "3DS" then
@@ -28,8 +27,11 @@ function love.load()
 	-- shared ui texture setup
 	textures = {"background", "buttons/button", "buttons/button_disabled", "buttons/button_highlighted"}
 	for	index, texture in ipairs(textures) do
-		textures[texture] = love.graphics.newImage("textures/ui/" .. texture .. ".png")
+		textures[texture] = love.graphics.newImage("assets/ui/" .. texture .. ".png")
 	end
+
+	-- initialize font
+	font.init()
 
 	-- ui setup
 	mode = "ui"

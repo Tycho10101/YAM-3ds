@@ -16,7 +16,7 @@ function ui.load_screen(screen_name)
 			for	index, widget in ipairs(container.elements) do
 
 				if widget.type == "image" then
-					widget.image = love.graphics.newImage("textures/" .. widget.src .. ".png")
+					widget.image = love.graphics.newImage("assets/" .. widget.src .. ".png")
 					widget.w, widget.h = widget.image:getDimensions()
 				elseif widget.type == "button" then
 					widget.w, widget.h = 200, 20
