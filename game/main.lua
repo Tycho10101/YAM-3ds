@@ -57,17 +57,6 @@ test2 = true
 
 function render_top(screen)
 	ui.draw_background(screen)
-	if test2 then
-		test = test + 0.1
-	else
-		test = test - 0.1
-	end
-	if test > 3 then
-		test2 = false
-	elseif test < 0.2 then
-		test2 = true
-	end
-	font.print("Hello, World!\nThis is a new line!", 0, 0, test)
 end
 
 function render_bottom(screen)

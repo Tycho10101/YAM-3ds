@@ -23,7 +23,6 @@ local function _get_letter_width(image_data, quad)
     end
 
     local trimmedWidth = (maxx - minx) + 1
-    -- local leftOffset = minx
     return trimmedWidth
 end
 
@@ -54,7 +53,37 @@ function font.init(texture_location, definition_location)
     end
 end
 
-function font.print(text, x, y, scale)
+function font.create(text)
+    local w, h = font._calculate_width(text)
+    local canvas = love.graphics.newCanvas(w + 1, h + 1)
+
+    canvas:renderTo(love.graphics.clear, 0, 0, 0, 0)
+    canvas:setFilter("nearest", "nearest")
+
+    love.graphics.setColor(0, 0, 0, 0.5)
+    canvas:renderTo(font._raw_print, text, 1, 1)
+    love.graphics.setColor(1, 1, 1, 1)
+    canvas:renderTo(font._raw_print, text, 0, 0)
+    love.graphics.setColor(1, 1, 1, 1)
+
+    return canvas
+end
+
+function font.print(text, x, y, r, sx, sy, ox, oy, kx, ky)
+    x = x or 0
+    y = y or 0
+    r = r or 0
+    sx = sx or 1
+    sy = sy or sx
+    ox = ox or 0
+    oy = oy or 0
+    kx = kx or 0
+    ky = ky or 0
+
+    love.graphics.draw(font.create(text), x, y, r, sx, sy, ox, oy, kx, ky)
+end
+
+function font._raw_print(text, x, y)
     local chars = utils.get_keys(font._definitions)
     local ox = x
     local oy = y
@@ -62,16 +91,41 @@ function font.print(text, x, y, scale)
     for i = 1, #text do
         local char = text:sub(i, i)
         if char == "\n" then
-            oy = oy + scale * 8
+            oy = oy + 10
             ox = x
         else
             if not utils.contains(chars, char) then
                 char = "_fb"
             end
             love.graphics.draw(font._full_tex, font._characters[char].quad, ox, oy)
-            ox = ox + font._characters[char].width + 1
+            ox = ox + (font._characters[char].width + 1)
         end
     end
+end
+
+function font._calculate_width(text)
+    local chars = utils.get_keys(font._definitions)
+    local w = 0
+    local h = 8
+    local lw = 0
+
+    for i = 1, #text do
+        local char = text:sub(i, i)
+        if char == "\n" then
+            h = h + 10
+            lw = 0
+        else
+            if not utils.contains(chars, char) then
+                char = "_fb"
+            end
+            lw = lw + (font._characters[char].width + 1)
+        end
+
+        if lw > w then
+            w = lw
+        end
+    end
+    return w - 1, h
 end
 
 return font
