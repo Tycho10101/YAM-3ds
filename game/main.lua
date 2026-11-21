@@ -17,7 +17,7 @@ function love.load()
 	else
 		function love.update(dt) end
 		function love.draw(screen)
-			love.graphics.print("This game doesn't support the Switch or Wii U, please use 3DS, or PC.\nPress any button to close.", 0, 0)
+			love.graphics.print("This game doesn't support the Switch or Wii U. Please use 3DS or PC.\nPress any button to close.", 0, 0)
 		end
 		function love.gamepadpressed(joystick, button)
 			love.event.quit()
@@ -52,9 +52,22 @@ function love.update(dt)
 	end
 end
 
+test = 0.2
+test2 = true
+
 function render_top(screen)
 	ui.draw_background(screen)
-	font.print("Hello, World!\nThis is a new line!", 0, 0, 1)
+	if test2 then
+		test = test + 0.1
+	else
+		test = test - 0.1
+	end
+	if test > 3 then
+		test2 = false
+	elseif test < 0.2 then
+		test2 = true
+	end
+	font.print("Hello, World!\nThis is a new line!", 0, 0, test)
 end
 
 function render_bottom(screen)
