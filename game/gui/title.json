@@ -2,7 +2,7 @@
     "top": [
         {
             "alignment": "center",
-            "padding": 0,
+            "padding": 4,
             "elements": [        
                 {
                     "type": "image",
@@ -14,15 +14,19 @@
     "bottom": [
         {
             "alignment": "center",
-            "padding": 10,
+            "padding": 4,
             "elements": [        
                 {
                     "type": "button",
-                    "text": "top"
+                    "text": "Singleplayer"
                 },
                 {
                     "type": "button",
-                    "text": "bottom"
+                    "text": "Multiplayer"
+                },
+                {
+                    "type": "button",
+                    "text": "Minecraft Realms"
                 }
             ]
         }

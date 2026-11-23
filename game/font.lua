@@ -54,7 +54,9 @@ function font.init(texture_location, definition_location)
 end
 
 function font.create(text)
-    local w, h = font._calculate_width(text)
+    assert(type(text) == "string", "Expected a string for 'text', got " .. type(text))
+
+    local w, h = font.calculate_size(text)
     local canvas = love.graphics.newCanvas(w + 1, h + 1)
 
     canvas:renderTo(love.graphics.clear, 0, 0, 0, 0)
@@ -103,7 +105,7 @@ function font._raw_print(text, x, y)
     end
 end
 
-function font._calculate_width(text)
+function font.calculate_size(text)
     local chars = utils.get_keys(font._definitions)
     local w = 0
     local h = 8

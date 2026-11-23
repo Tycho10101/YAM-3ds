@@ -1,7 +1,7 @@
 ui = {}
 
 local json = require "json"
-local utilities = require "utils"
+local utils = require "utils"
 
 function ui.load_screen(screen_name)
 	local screen_data, _ = love.filesystem.read("gui/" .. screen_name .. ".json")
@@ -20,6 +20,8 @@ function ui.load_screen(screen_name)
 					widget.w, widget.h = widget.image:getDimensions()
 				elseif widget.type == "button" then
 					widget.w, widget.h = 200, 20
+					widget.font = font.create(widget.text)
+					widget.fw, widget.fh = font.calculate_size(widget.text)
 				else
 					error("Unknown widget type: " .. widget.type)
 				end
@@ -48,7 +50,8 @@ function ui.render_ui(screen, screen_data, textures)
 		for	index, widget in ipairs(container.elements) do
 			local x, y = 0, 0
 			if container.alignment == "center" then
-				x, y = (screen_width - widget.w) / 2, container.top + y_offset
+				x, y = math.floor((screen_width - widget.w) / 2), math.floor(container.top + y_offset)
+				x = 0
 			else
 				error("No renderer for alignment: " .. container.alignment)
 			end
@@ -62,6 +65,8 @@ function ui.render_ui(screen, screen_data, textures)
                 else
 				    love.graphics.draw(textures["buttons/button"], x, y)
                 end
+
+				love.graphics.draw(widget.font, math.floor((widget.w - widget.fw) / 2 + x), math.floor((widget.h - widget.fh) / 2 + y))
 			else
 				error("No renderer for widget: " .. widget.type)
 			end
